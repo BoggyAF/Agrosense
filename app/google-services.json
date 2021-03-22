@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "985433225446",
+    "project_id": "agrosense-34344",
+    "storage_bucket": "agrosense-34344.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:985433225446:android:6332b66028f07d6ca3e327",
+        "android_client_info": {
+          "package_name": "etti.agrosense"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "985433225446-md4hm9vlu1uqrg1irq17fa286rgrocss.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJJ13hD3X2a3UrAUBDeD1MWdi3BhMKZI8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "985433225446-md4hm9vlu1uqrg1irq17fa286rgrocss.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

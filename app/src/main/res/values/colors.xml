@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#EF5D60</color>
+    <color name="colorPrimaryDark">#A71113</color>
+    <color name="colorAccent">#FF9F1C</color>
+    <color name="white">#F5FCED</color>
+    <color name="DashboardBlue">#EF5D60</color>
+    <color name="GraphPoint">#00748b</color>
+</resources>
