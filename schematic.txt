@@ -1,0 +1,45 @@
+
+"sensors": {
+    "dailymeasurements": {
+        "measurement": {
+             "date": "12-1-2021"
+             "co2": ,
+             "temperature": ,
+             "pressure": ,
+             "humidity": ,
+             "luminosity": ,
+        },
+        "measurement2": {
+             "date": "12-1-2021"
+             "co2": ,
+             "temperature": ,
+             "pressure": ,
+             "humidity": ,
+             "luminosity": ,
+        }
+    }
+}
+
+		
+->historicmeasurements
+	->co2
+		->value
+		timestamp
+		id
+	->pressure
+		->value
+		timestamp
+		id
+	->temperature
+		->value
+		timestamp
+		id
+	->humidity
+		->value
+		timestamp
+		id
+	->luminosity
+		->value
+		timestamp
+		id
+id folosit pentru indexarea pe zile

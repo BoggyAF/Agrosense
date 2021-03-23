@@ -34,17 +34,24 @@ import static android.util.Log.d;
 public class RetrieveDataHelper {
 
     static DatabaseReference ref, ref2;
+    private FirebaseDatabase database;
     static String value;
     static SharedPreferences tempPref, luminPref, humidPref, co2Pref, pressPref, nrPref;
     static float valueMeasurement;
     static long timestampMeasurement;
     static int tempID, luminID, humidID, co2ID, pressID, numberOfHistoricMeasurements;
 
+    private FirebaseDatabase getDatabase()
+    {
+        this.database = database.getInstance();
+        return database;
+    }
+
     public static void getTemp(int daysCount, Context context)
     {
         final TinyDB tinydb = new TinyDB(context);
         tempPref = context.getSharedPreferences("valueTemp", Context.MODE_PRIVATE);
-        ref2= FirebaseDatabase.getInstance().getReference().child("Sensors").child("DailyMeasurements").child("Temperature");
+        ref2= FirebaseDatabase.getInstance().getReference("agrosense-34344-default-rtdb");
         ref = FirebaseDatabase.getInstance().getReference().child("Sensors").child("HistoricMeasurements");
         ref2.keepSynced(true);
         ref.keepSynced(true);
