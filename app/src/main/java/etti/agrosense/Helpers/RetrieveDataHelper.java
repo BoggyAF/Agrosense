@@ -34,11 +34,18 @@ import static android.util.Log.d;
 public class RetrieveDataHelper {
 
     static DatabaseReference ref, ref2;
+    private FirebaseDatabase database;
     static String value;
     static SharedPreferences tempPref, luminPref, humidPref, co2Pref, pressPref, nrPref;
     static float valueMeasurement;
     static long timestampMeasurement;
     static int tempID, luminID, humidID, co2ID, pressID, numberOfHistoricMeasurements;
+
+    private FirebaseDatabase getDatabase()
+    {
+        this.database = database.getInstance();
+        return database;
+    }
 
     public static void getTemp(int daysCount, Context context)
     {
