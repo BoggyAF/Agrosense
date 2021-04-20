@@ -156,7 +156,7 @@ public class Grafic extends AppCompatActivity
 
         //modifies the size of the line and the value points
         set1.setLineWidth(3f);
-        set1.setCircleRadius(0f);
+        set1.setCircleRadius(1f);
 
         //disables the values on top of the graph
         set1.setDrawValues(false);

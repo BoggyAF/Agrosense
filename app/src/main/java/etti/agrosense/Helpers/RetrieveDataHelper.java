@@ -28,6 +28,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.HashMap;
 
 import static android.util.Log.d;
 
@@ -47,12 +48,18 @@ public class RetrieveDataHelper {
         return database;
     }
 
+    public static void setRelay(HashMap relayMap)
+    {
+        ref = FirebaseDatabase.getInstance("https://agrosense-34344-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("Sensors").child("Relays");
+        ref.setValue(relayMap);
+    }
+
     public static void getTemp(int daysCount, Context context)
     {
         final TinyDB tinydb = new TinyDB(context);
         tempPref = context.getSharedPreferences("valueTemp", Context.MODE_PRIVATE);
         ref2= FirebaseDatabase.getInstance("https://agrosense-34344-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("Sensors").child("DailyMeasurements");
-        ref = FirebaseDatabase.getInstance().getReference().child("Sensors").child("HistoricMeasurements");
+        ref = FirebaseDatabase.getInstance("https://agrosense-34344-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("Sensors").child("HistoricMeasurements");
         ref2.keepSynced(true);
         ref.keepSynced(true);
         if(daysCount==0)
@@ -101,7 +108,7 @@ public class RetrieveDataHelper {
                     Log.d("RetrieveData:", databaseError.getMessage());
                 }
             };
-            ref.orderByKey().limitToLast(daysCount).addValueEventListener(eventListener2);
+            ref.orderByKey().limitToLast (daysCount).addValueEventListener(eventListener2);
         }
     }
 
@@ -110,7 +117,7 @@ public class RetrieveDataHelper {
         final TinyDB tinydb = new TinyDB(context);
         luminPref = context.getSharedPreferences("valueLumin", Context.MODE_PRIVATE);
         ref2= FirebaseDatabase.getInstance("https://agrosense-34344-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("Sensors").child("DailyMeasurements");
-        ref = FirebaseDatabase.getInstance().getReference().child("Sensors").child("HistoricMeasurements");
+        ref = FirebaseDatabase.getInstance("https://agrosense-34344-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("Sensors").child("HistoricMeasurements");
         ref2.keepSynced(true);
         ref.keepSynced(true);
         if(daysCount==0)
@@ -167,7 +174,7 @@ public class RetrieveDataHelper {
         final TinyDB tinydb = new TinyDB(context);
         humidPref = context.getSharedPreferences("valueHumid", Context.MODE_PRIVATE);
         ref2= FirebaseDatabase.getInstance("https://agrosense-34344-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("Sensors").child("DailyMeasurements");
-        ref = FirebaseDatabase.getInstance().getReference().child("Sensors").child("HistoricMeasurements");
+        ref = FirebaseDatabase.getInstance("https://agrosense-34344-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("Sensors").child("HistoricMeasurements");
         ref2.keepSynced(true);
         ref.keepSynced(true);
         if(daysCount==0)
@@ -224,7 +231,7 @@ public class RetrieveDataHelper {
         final TinyDB tinydb = new TinyDB(context);
         co2Pref = context.getSharedPreferences("valueCO2", Context.MODE_PRIVATE);
         ref2= FirebaseDatabase.getInstance("https://agrosense-34344-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("Sensors").child("DailyMeasurements");
-        ref = FirebaseDatabase.getInstance().getReference().child("Sensors").child("HistoricMeasurements");
+        ref = FirebaseDatabase.getInstance("https://agrosense-34344-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("Sensors").child("HistoricMeasurements");
         ref2.keepSynced(true);
         ref.keepSynced(true);
         if(daysCount==0)
@@ -281,7 +288,7 @@ public class RetrieveDataHelper {
         final TinyDB tinydb = new TinyDB(context);
         pressPref = context.getSharedPreferences("valuePressure", Context.MODE_PRIVATE);
         ref2= FirebaseDatabase.getInstance("https://agrosense-34344-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("Sensors").child("DailyMeasurements");
-        ref = FirebaseDatabase.getInstance().getReference().child("Sensors").child("HistoricMeasurements");
+        ref = FirebaseDatabase.getInstance("https://agrosense-34344-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("Sensors").child("HistoricMeasurements");
         ref2.keepSynced(true);
         ref.keepSynced(true);
         if(daysCount==0)
@@ -338,7 +345,7 @@ public class RetrieveDataHelper {
     public static void getNumberOfHistoricMeasurements(Context context)
     {
         nrPref = context.getSharedPreferences("NumberOfHistoricMeasurements", Context.MODE_PRIVATE);
-        ref = FirebaseDatabase.getInstance().getReference().child("Sensors").child("HistoricMeasurements");
+        ref = FirebaseDatabase.getInstance("https://agrosense-34344-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("Sensors").child("HistoricMeasurements");
         ref.keepSynced(true);
         numberOfHistoricMeasurements=0;
         ValueEventListener eventListener2 =  new ValueEventListener()

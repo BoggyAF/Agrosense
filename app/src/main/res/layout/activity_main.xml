@@ -9,12 +9,12 @@
 
     <View
         android:id="@+id/view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
         android:layout_height="350dp"
-        android:background="@color/DashboardBlue"></View>
+        android:background="@color/DashboardBlue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></View>
 
     <ImageView
         android:id="@+id/imageView7"
@@ -57,7 +57,7 @@
         app:layout_constraintVertical_bias="0.877" />
 
     <Button
-        android:id="@+id/refreshButton"
+        android:id="@+id/saveButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight=".35"
@@ -167,7 +167,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <TextView
-        android:id="@+id/tempView"
+        android:id="@+id/relay1inputview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
@@ -180,7 +180,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/pressView"
+        android:id="@+id/relay2inputview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -188,7 +188,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.162"
         app:layout_constraintStart_toEndOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/tempView" />
+        app:layout_constraintTop_toBottomOf="@+id/relay1inputview" />
 
     <TextView
         android:id="@+id/humidView"
@@ -199,7 +199,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.162"
         app:layout_constraintStart_toEndOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/pressView" />
+        app:layout_constraintTop_toBottomOf="@+id/relay2inputview" />
 
     <TextView
         android:id="@+id/luminView"

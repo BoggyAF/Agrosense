@@ -1,26 +1,18 @@
 package etti.agrosense.Activities;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
-import etti.agrosense.Helpers.RetrieveDataHelper;
-import etti.agrosense.Helpers.TinyDB;
-import etti.agrosense.Models.MeasurementData;
 import etti.agrosense.R;
 import com.google.firebase.auth.FirebaseAuth;
-
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -94,8 +86,8 @@ public class MainActivity extends AppCompatActivity
     public void setData()
     {
 
-        tempView = (TextView)findViewById(R.id.tempView);
-        pressView = (TextView)findViewById(R.id.pressView);
+        tempView = (TextView)findViewById(R.id.relay1inputview);
+        pressView = (TextView)findViewById(R.id.relay2inputview);
         luminView = (TextView)findViewById(R.id.luminView);
         humidView = (TextView)findViewById(R.id.humidView);
         co2View = (TextView)findViewById(R.id.co2View);
